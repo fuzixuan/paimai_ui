@@ -73,7 +73,7 @@
 				<el-form-item label="验证码" prop="sbiao">
 					<el-col :span="4">
 						<!--非常重要-->
-						<el-input v-model="shopp.sbiao" placeholder="请输入验证码"></el-input>
+						<el-input v-model="shopp.sbiao" placeholder="请输入验证码" ></el-input>
 					</el-col>
 					<span class="wordp lf"><img src="img/img2.jpg" width="96" height="27" alt="" /></span>
            			<span class="lf"><a href="" title="">看不清</a></span>
@@ -86,7 +86,7 @@
 				</el-form-item>
 				<el-form-item>
 					<el-col :span="4">
-					<el-button type="primary" @click="adduser">登录</el-button>
+					<el-button type="primary" @click="adduser(shopp.sno,shopp.sname)">登录</el-button>
 					<el-button type="danger">注册</el-button>
 					</el-col>
 					<span class="blues  lf"><a href="" title="">忘记密码?</a></span>
@@ -104,12 +104,7 @@
 				shopp:{
 					sno:'',
 					sname:'',
-					sbiao:'',
-					shao:'',
-					sprice:'',
-					simg:'',
-					stext:''
-					
+					sbiao:'7chh'
 				},
 				shoppRules:{
 					sno: [{
@@ -134,13 +129,29 @@
 				
 			},
 			methods: {
-				adduser() {
+				adduser(sno,sname) {
 					let _this = this;
 					this.$refs['shoppForm'].validate(valid => {
 						if(valid) {
 							//验证通过
 							//自定义加载块
+							const loading = this.$loading({
+								lock: true,
+								text: '努力更新中....',
+								spinner: 'el-icon-loading',
+								background: 'rgba(0, 0, 0, 0.5)'
+							});
+							//延迟2秒，模拟网络延迟
+							setTimeout(() => {
+							$.getJSON(`http://127.0.0.1:8080/api/Paimai/login/${sno}/${sname}`,function(msg){
+								if(msg.code=="200"){
+									location.href="index.html";
+								}else if(msg.code=="300"){
+									alert('密码错误');
+								}
+							});
 							
+							}, 2000);
 						} else {
 							//验证失败
 							this.$alert('请按格式正确填写信息', '系统提示');

@@ -24,7 +24,12 @@
 	<body>
 		<div id="indxApp">
 			<el-container style='height:95vh;'>
-				<el-header style='height:8%; text-align: center;'>在线拍卖系统</el-header>
+				<el-header style='height:8%; text-align: center;'>在线拍卖系统
+				<div style='font-size: 14px; float: right;'>当前用户是：<span style="color: red;" class="sno">张三</span>
+					<el-button size="mini" type="danger">注销</el-button>
+				</div>
+				</el-header>
+				
 				<el-container>
 					<el-aside width="200px">
 						<el-menu>
@@ -69,6 +74,10 @@
 				showView(url) {
 					$('#cnt').load(url);
 				}
+			},mounted() {
+				let _this = this; //非常重要
+				sno=window.sessionStorage.getItem("sno");
+				$(".sno").html(sno);
 			}
 		}).$mount('#indxApp');
 	</script>
