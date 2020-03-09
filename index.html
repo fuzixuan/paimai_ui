@@ -5,9 +5,9 @@
 		<meta charset="utf-8" />
 		<title>后台管理页面参考</title>
 		<link rel="stylesheet" href="css/index.css" />
-		<script type="text/javascript" src="js/vue.js"></script>
-		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-		<script type="text/javascript" src="js/jq_ajax_config.js"></script>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+		<script type="text/javascript" src="js/jq_ajax_config.js" ></script>
 		<style>
 			.el-header,
 			.el-footer {
@@ -24,12 +24,9 @@
 	<body>
 		<div id="indxApp">
 			<el-container style='height:95vh;'>
-				<el-header style='height:8%; text-align: center;'>在线拍卖系统
-				<div style='font-size: 14px; float: right;'>当前用户是：<span style="color: red;" class="sno">张三</span>
-					<el-button size="mini" type="danger">注销</el-button>
-				</div>
-				</el-header>
-				
+				<el-header style='height:8%; text-align: center;'>在线拍卖系统<div style="float: right;" class="right">
+				   	<p style="font-size: 15px;">用户：<span style="color: red;margin-right: 10px;" v-text="user.username"></span><el-button size="mini" type="danger">注销</el-button></p>
+				  </div></el-header>
 				<el-container>
 					<el-aside width="200px">
 						<el-menu>
@@ -40,12 +37,11 @@
 								</template>
 								<el-menu-item-group>
 									<el-menu-item index="1-3" @click="showView('拍卖品列表页.html')"><i class="el-icon-message"></i>拍卖品首页</el-menu-item>
-									<el-menu-item index="1-2" @click="showView('竞拍页.html')"><i class="el-icon-message"></i>竞拍</el-menu-item>
 									<el-menu-item index="1-1" @click="showView('查看竞拍结果.html')"><i class="el-icon-message"></i>拍卖结果</el-menu-item>
 								</el-menu-item-group>
 							</el-submenu>
 						</el-menu>
-						<el-menu>
+						<el-menu v-if="user.usersf==1">
 							<el-submenu>
 								<template slot="title">
 									<i class="el-icon-user"></i>
@@ -66,18 +62,34 @@
 			</el-container>
 		</div>
 	</body>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/index.js" ></script>
 	<script>
 		var indexApp = new Vue({
-			data: {},
+			data: {
+				user: {
+					userid:'',
+					username: '',
+					usermm: '',
+					usersfz: '',
+					userdh: '',
+					userdz: '',
+					useryzbh: '',
+					yzm: '',
+					usersf:'',
+					userwt:'',
+					userda:''
+				},
+			},
 			methods: {
 				showView(url) {
 					$('#cnt').load(url);
-				}
-			},mounted() {
-				let _this = this; //非常重要
-				sno=window.sessionStorage.getItem("sno");
-				$(".sno").html(sno);
+				},
+			},
+			mounted() {
+				let _this=this;
+				$.getJSON(`http://127.0.0.1:8080/api/paimai/user`, function(date){
+					_this.user=date;
+				});
 			}
 		}).$mount('#indxApp');
 	</script>

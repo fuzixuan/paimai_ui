@@ -1,292 +1,145 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-<link href="css/common.css" rel="stylesheet" type="text/css" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<style>
-  .el-table .warning-row {
-    background: #EBF6FA;
-  }
 
-  .el-table .success-row {
-    background: #EBF6FA;
-  }
-</style>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/common.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<style>
+			.el-table .warning-row {
+				background: #EBF6FA;
+			}
+			
+			.el-table .success-row {
+				background: #EBF6FA;
+			}
+		</style>
+	</head>
 
-<body>
-<!--<div class="wrap">
-  <div class="sale">
-    <h1 class="lf">在线拍卖系统</h1>
-    <div class="logout right"><a href="#" title="注销">注销</a></div>
-  </div>
-  <div class="forms">
-    <label for="name">名称</label>
-    <input name="" type="text" class="nwinput" id="name"/>
-    <label for="names">描述</label>
-    <input name="" type="text" id="names" class="nwinput"/>
-    <label for="time">开始时间</label>
-    <input name="" type="text" id="time" class="nwinput"/>
-    <label for="end-time">结束时间</label>
-    <input name="" type="text" id="end-time" class="nwinput" />
-    <label for="price">起拍价</label>
-    <input name="" type="text" id="price" class="nwinput" />
-    <input name="" type="button"  value="查询" class="spbg buttombg f14  sale-buttom"/>
-    <input type="button"  value="发布" class="spbg buttombg f14  sale-buttom buttomb"/>
-  </div>
-  <div class="items">
-      <ul class="rows even strong">
-        <li>名称</li>
-        <li class="list-wd">描述</li>
-        <li>开始时间</li>
-        <li>结束时间</li>
-        <li>起拍价</li>
-        <li class="borderno">操作</li>
-      </ul>
-      <ul class="rows">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍" onclick="dele();">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows even">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows even">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-           <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows even">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows even">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <ul class="rows even">
-        <li><a href="国书" title="">国书</a></li>
-        <li class="list-wd">明国藏书</li>
-        <li>2010-01-20 12:30:30</li>
-        <li>2010-09-08 12:30:30</li>
-        <li>2,000</li>
-        <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
-          <a href="#" title="竞拍" onclick="abc();">删除</a>
-        </li>
-      </ul>
-      <div class="page">
-        <a href="#" title="">首页</a>
-        <a href="#" title="">上一页</a>
-        <span class="red">前5页</span>
-        <a href="#" title="">1</a> 
-        <a href="#" title="">2</a> 
-        <a href="#" title="">3</a> 
-        <a href="#" title="">4</a>
-        <a href="#" title="">5</a> 
-        <a href="#" title="">下一页</a>
-        <a href="#" title="">尾页</a> 
-      </div>
-  </div>
-</div>-->
-
-<div id="personApp" v-loading="loading">
+	<body>
+		<div id="personApp" v-loading="loading">
 			<el-row>
 				<div>
-			    <h1 class="lf">在线拍卖系统</h1>
-			  </div>
+					<h1 class="lf">在线拍卖系统</h1>
+				</div>
 				<el-col :span="24">
 					<el-row :span="24">
-					<el-col :span="4">
-						名称<el-input v-model="input" placeholder=""></el-input>
-					</el-col>
-					<el-col :span="4">
-						描述<el-input v-model="input" placeholder=""></el-input>
-					</el-col>
-					<el-col :span="4">
-						开始时间<el-input v-model="input" placeholder=""></el-input>
-					</el-col>
-					<el-col :span="4">
-						结束时间<el-input v-model="input" placeholder=""></el-input>
-					</el-col>
-					<el-col :span="4">
-						起拍价<el-input v-model="input" placeholder=""></el-input>
-					</el-col>
-						<el-button type="primary" round>查询</el-button>
-					</el-row>	
-					
-					<el-row>
 						<el-col :span="4">
-						<el-button type="primary" round>发布</el-button>
-					</el-col>
-					</el-row>	
-					
-					<el-table :default-sort="{prop: 'pdate', order: 'descending'}" :data="pageInfo" border :row-class-name="tableRowClassName">
-						<el-table-column prop="pbh" label="名称">	
+							名称
+							<el-input v-model="tiaojian.pmpname" placeholder=""></el-input>
+						</el-col>
+						<el-col :span="4">
+							描述
+							<el-input v-model="tiaojian.pmpms" placeholder=""></el-input>
+						</el-col>
+						<el-col :span="4">
+							开始时间
+							<el-input type="date" v-model="tiaojian.pmpkssj" placeholder=""></el-input>
+						</el-col>
+						<el-col :span="4">
+							结束时间
+							<el-input type="date" v-model="tiaojian.pmpjssj" placeholder=""></el-input>
+						</el-col>
+						<el-col :span="4">
+							起拍价
+							<el-input placeholder="" v-model="tiaojian.pmpqpj" placeholder=""></el-input>
+						</el-col>
+						<el-col :span="4">
+							<el-button style="margin-top: 18px;" type="primary" round @click="chaxun">查询</el-button>
+						</el-col>
+					</el-row>
+
+					<el-table :default-sort="{prop: 'pdate', order: 'descending'}" :data="pageInfo.list" border :row-class-name="tableRowClassName">
+						<el-table-column prop="pmpname" label="名称">
 						</el-table-column>
-						<el-table-column prop="pmc" label="描述">
+						<el-table-column prop="pmpms" label="描述">
 						</el-table-column>
-						<el-table-column prop="psb" label="开始时间">
+						<el-table-column prop="pmpkssj" label="开始时间">
 						</el-table-column>
-						<el-table-column prop="pxh" label="结束时间">
+						<el-table-column prop="pmpjssj" label="结束时间">
 						</el-table-column>
-						<el-table-column prop="pjg" label="起拍价">
+						<el-table-column prop="pmpqpj" label="起拍价">
 						</el-table-column>
 						<el-table-column label="操作">
 							<template slot-scope="temp">
-								<el-button icon="el-icon-edit" size="mini" type="primary" @click="showInfo(temp.row.pid)">修改</el-button>
-								<el-button icon="el-icon-delete" size="mini" type="danger" @click="delInfo(temp.row.pid)">删除</el-button>
+								<el-button icon="el-icon-edit" size="mini" type="primary" @click="xiugai(temp.row.pmpid)">修改</el-button>
+								<el-button icon="el-icon-delete" size="mini" type="danger" @click="shangchu(temp.row.pmpid,temp.row.pmpkssj,temp.row.pmpjssj)">删除</el-button>
 							</template>
 						</el-table-column>
-						
+
 					</el-table>
 				</el-col>
 			</el-row>
 			<el-row>
 				<el-col :span="24">
-					<el-pagination v-if="pageInfo.total!=0" :background="true" :pager-count="4" @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="pageInfo.pageNum" :page-size="pageInfo.pageSize" :total="pageInfo.total" :page-sizes="[3,6]"  layout="total, sizes, prev, pager, next, jumper">
+					<el-pagination v-if="pageInfo.total!=0" :background="true" :pager-count="4" @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="pageInfo.pageNum" :page-size="pageInfo.pageSize" :total="pageInfo.total" :page-sizes="[3,6]" layout="total, sizes, prev, pager, next, jumper">
 					</el-pagination>
 				</el-col>
 			</el-row>
 		</div>
 
-</body>
-  <script>
-  	var personApp = new Vue({
+	</body>
+	<script>
+		var personApp = new Vue({
 			el: '#personApp',
 			data: {
-				pageInfo: [{
-					pbh: '国书',
-					pmc: "明国藏书",
-					psb:'2010-01-20 12:30:30',
-					pxh:'2010-09-08 12:30:30',
-					pjg:'2,000'
-				}, {
-					pbh: '国书',
-					pmc: "明国藏书",
-					psb:'2010-01-20 12:30:30',
-					pxh:'2010-09-08 12:30:30',
-					pjg:'2,000'
-				},{
-					pbh: '国书',
-					pmc: "明国藏书",
-					psb:'2010-01-20 12:30:30',
-					pxh:'2010-09-08 12:30:30',
-					pjg:'2,000'
-				},{
-					pbh: '国书',
-					pmc: "明国藏书",
-					psb:'2010-01-20 12:30:30',
-					pxh:'2010-09-08 12:30:30',
-					pjg:'2,000'
-				}],
+				pageInfo: [],
+				tiaojian: {
+					pmpid: null,
+					pmpname: null,
+					pmpqpj: null,
+					pmpdj: null,
+					pmpkssj: null,
+					pmpjssj: null,
+					pmptplj: null,
+					pmptpkzm: null,
+					pmpms: null
+				},
 				loading: true
 			},
 			methods: {
-				tableRowClassName({row, rowIndex}) {
-	        if (rowIndex === 1) {
-	          return 'warning-row';
-	        } else if (rowIndex === 3) {
-	          return 'success-row';
-	        }
-	        return '';
-	      },
-				showInfo(pid) {
-					//indexApp.showView('info.html');
-					sessionStorage.setItem('pid', pid);
+				chaxun() {
+					this.goToPage(1, 3, this.tiaojian.pmpname, this.tiaojian.pmpms, this.tiaojian.pmpkssj, this.tiaojian.pmpjssj, this.tiaojian.pmpqpj);
 				},
-				delInfo(pid) {
+				tableRowClassName({
+					row,
+					rowIndex
+				}) {
+					if(rowIndex === 1) {
+						return 'warning-row';
+					} else if(rowIndex === 3) {
+						return 'success-row';
+					}
+					return '';
+				},
+				xiugai(pmpid) {
+					indexApp.showView('增加商品页.html');
+					sessionStorage.setItem('pmpid1', pmpid);
+				},
+				shangchu(pmpid, kssj, jssj) {
 					let _this = this;
 					this.$confirm('是否移除会员信息?', '系统提示', {
 						confirmButtonText: '确定',
 						cancelButtonText: '取消',
 						type: 'warning'
 					}).then(() => {
-						_this.$message({
-							type: 'success',
-							message: '删除成功!'
+						$.ajax(`http://127.0.0.1:8080/api/paimai/shangchu/${pmpid}/${kssj}/${jssj}`, 
+							{
+							type: "delete",
+							dataType: "json",
+							success(data) {
+								if(data.code == "100") {
+									_this.$message(data.msg);
+								} else {
+									_this.$message({
+										type: 'success',
+										message: '删除成功!'
+									});
+									indexApp.showView('拍卖商品管理页.html');
+								}
+							}
 						});
-
 					}).catch(() => {
 						this.$message({
 							type: 'info',
@@ -295,22 +148,26 @@
 					});
 				},
 				handleSizeChange(val) {
-					this.goToPage(this.pageInfo.pageNum, val);
+					this.goToPage(this.pageInfo.pageNum, val, this.tiaojian.pmpname, this.tiaojian.pmpms, this.tiaojian.pmpkssj, this.tiaojian.pmpjssj, this.tiaojian.pmpqpj);
 				},
 				handleCurrentChange(val) {
-					this.goToPage(val, this.pageInfo.pageSize);
+					this.goToPage(val, this.pageInfo.pageSize, this.tiaojian.pmpname, this.tiaojian.pmpms, this.tiaojian.pmpkssj, this.tiaojian.pmpjssj, this.tiaojian.pmpqpj);
 				},
-				goToPage() {
+				goToPage(n, s, pmpname, pmpms, pmpkssj, pmpjssj, pmpqpj) {
 					let _this = this;
-					//this.loading = true;
-					_this.loading = false;
+					$.getJSON(`http://127.0.0.1:8080/api/paimai/shouye/${n}/${s}/${pmpname}/${pmpms}/${pmpkssj}/${pmpjssj}/${pmpqpj}`, function(date) {
+						_this.pageInfo = date;
+					});
 				}
 			},
 			mounted() {
-				this.goToPage();
+				setTimeout(() => {
+					this.loading = false;
+				}, 1000);
+				this.goToPage(1, 3, this.tiaojian.pmpname, this.tiaojian.pmpms, this.tiaojian.pmpkssj, this.tiaojian.pmpjssj, this.tiaojian.pmpqpj);
 			}
 		});
-   /*function abc(){
+		/*function abc(){
 	   
 	   if(confirm("你真的确认要删除吗？请确认")){
 	    
@@ -329,5 +186,6 @@
 				   return false;
 				   }
 		   }*/
-  </script>
+	</script>
+
 </html>
