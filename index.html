@@ -25,7 +25,7 @@
 		<div id="indxApp">
 			<el-container style='height:95vh;'>
 				<el-header style='height:8%; text-align: center;'>在线拍卖系统<div style="float: right;" class="right">
-				   	<p style="font-size: 15px;">用户：<span style="color: red;margin-right: 10px;" v-text="user.username"></span><el-button size="mini" type="danger">注销</el-button></p>
+				   	<p style="font-size: 15px;">用户：<span style="color: red;margin-right: 10px;" v-text="user.username"></span><el-button size="mini" type="danger" @click="zhuxiao">注销</el-button></p>
 				  </div></el-header>
 				<el-container>
 					<el-aside width="200px">
@@ -84,6 +84,13 @@
 				showView(url) {
 					$('#cnt').load(url);
 				},
+				zhuxiao(){
+					let _this=this;
+					$.getJSON(`http://127.0.0.1:8080/api/paimai/outuser`, function(date){
+					_this.user=date;
+					location.href='竞拍者登录.html';
+				});
+				}
 			},
 			mounted() {
 				let _this=this;
